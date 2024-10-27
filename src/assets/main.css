@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+          color 0.5s,
+          background-color 0.5s;
+  line-height: 1.6;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+/* space respiration effect */
+
+@keyframes space-glow-hover {
+  0% {
+    box-shadow: 0 0 2px var(--color-primary), 0 0 4px var(--color-primary), 0 0 8px var(--color-accent);
+  }
+  50% {
+    box-shadow: 0 0 4px var(--color-primary), 0 0 8px var(--color-primary), 0 0 16px var(--color-accent);
+  }
+  100% {
+    box-shadow: 0 0 2px var(--color-primary), 0 0 4px var(--color-primary), 0 0 8px var(--color-accent);
+  }
+}
+
+/* cyberpunk glitch effect */
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  }
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .stack span:nth-child(even) { --glitch-translate: -4px; }
+
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .intro {
+    width: 90vw;
+  }
+
+  #experience {
+    grid-template-columns: 1fr;
+    margin: 0 5vw;
+  }
+
+  .project {
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  .project-img {
+    width: 100%;
+  }
+
+  .project-body {
+    width: 100%;
+  }
+}
