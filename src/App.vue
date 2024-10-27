@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Card from "@/components/card.vue";
+import Project from "@/components/project.vue";
+</script>
 <template>
   <header>
     <div class="wrapper">
@@ -47,46 +51,28 @@
       text="learned web development at BeCode, a 7-month intensive training program."
     />
     <Card
-      image="/johndoe.jpg"
-      title="John Doe Inc."
-      text="3-month internship at John Doe Inc. as a junior developer, working on a E-commerce website."
-    />
-    <Card
-      image="/johndoe.jpg"
-      title="John Doe Inc."
-      text="3-month internship at John Doe Inc. as a junior developer, working on a E-commerce website."
-    />
-    <Card
-      image="/johndoe.jpg"
-      title="John Doe Inc."
-      text="3-month internship at John Doe Inc. as a junior developer, working on a E-commerce website."
+      image="/Service-Citoyen.webp"
+      title="Service Citoyen"
+      text="Volunteered for a 2 month in a retirement home, helping the elderly in my community."
     />
   </section>
 
   <section id="projects">
     <Project
       :reverse="false"
-      status="in progress"
-      image="https://placehold.co/900x700"
-      title="Project Delta"
-      text="This project is focused on creating a new social media platform with unique features."
-      link="https://example.com/project-delta"
+      status="completed"
+      image="/genialo.png"
+      title="Génial-O"
+      text="A discord bot / website that I developed when i started learning Node.js. It's a fun project that train me with vueJS, MongoDB and Debian server."
+      link="https://github.com/Genial-Team/Genial-O-14"
     />
     <Project
       :reverse="true"
-      status="completed"
-      image="https://placehold.co/900x700"
-      title="Project Epsilon"
-      text="A completed project that developed a cutting-edge data analytics tool."
-      link="https://example.com/project-epsilon"
-    />
-    <Project
-      :reverse="false"
       status="in progress"
       image="https://placehold.co/900x700"
-      title="Project Zeta"
-      text="This project aims to build a new cloud storage solution with enhanced security."
-      link="https://example.com/project-zeta"
+      title="Lokkeroom"
+      text="Developed a secure, RESTful platform that enables sports clubs to create private communication channels for teams, allowing coaches and players to exchange messages within a dedicated lobby. Each team has an exclusive lobby created by a coach (admin) who manages team membership and access. This platform was designed for simplicity and scalability, providing a direct, team-only communication experience."
+      link="https://github.com/LyneQ/Lokkeroom"
     />
   </section>
 
@@ -99,7 +85,6 @@
 </template>
 
 <style scoped>
-@import "src/assets/base.css";
 
 header {
   background-color: var(--color-surface);
@@ -207,8 +192,3 @@ main {
   padding: 2rem;
 }
 </style>
-
-<script setup lang="ts">
-import Card from "@/components/card.vue";
-import Project from "@/components/project.vue";
-</script>
