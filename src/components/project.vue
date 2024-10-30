@@ -30,20 +30,22 @@ export default defineComponent({
     }
   },
   setup(props) {
+    const clientIsMobile = window.matchMedia('(max-width: 480px)').matches;
     const flexDirection = computed(() => (props.reverse ? 'row-reverse' : 'row'));
     const textAlignRight = computed(() => (props.reverse ? 'left' : 'right'));
-    return { flexDirection, textAlignRight };
+    return { flexDirection, textAlignRight, clientIsMobile };
   }
 });
 </script>
 
 <template>
   <div class="project" :style="{ flexDirection: flexDirection }">
-    <img class="project-img" :src="image" alt="Project image" />
+    <img v-show="!clientIsMobile" class="project-img" :src="image" alt="Project image" />
     <div>
-      <div class="project-head" :style="{ textAlign: textAlignRight }">
+      <div class="project-head" :style="!clientIsMobile ? { textAlign: textAlignRight } : {}">
         <h5>{{ status }}</h5>
         <h3 class="project-title">{{ title }}</h3>
+        <img v-show="clientIsMobile" class="project-img" :src="image" alt="Project image" />
       </div>
 
       <div class="project-body">

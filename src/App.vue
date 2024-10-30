@@ -94,8 +94,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding: 0 15vw;
 
+    @media (max-width: 480px) {
+      padding: 0;
+    }
     ul {
       display: flex;
       list-style: none;
@@ -103,10 +107,10 @@ header {
     }
 
     .name {
-      @media (max-width: 480px) {
-        padding-left: 0;
-      }
-      padding-left: 15vw;
+      /*@media (max-width: 480px) {
+      //  padding-left: 0;
+      //}
+      //padding-left: 15vw;*/
       font-size: 2rem;
 
       background: linear-gradient(45deg, var(--color-accent), var(--color-accent), var(--color-accent), var(--color-secondary));
