@@ -16,13 +16,18 @@ export default defineComponent({
       type: String,
       default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita impedit in iure molestias praesentium repellat!"
     }
+  },
+  data() {
+    return {
+      imageUrl: new URL(this.image, import.meta.url).href
+    }
   }
 })
 </script>
 
 <template>
   <div class="card">
-    <img class="card-img" :src="image" alt="Card image" />
+    <img class="card-img" :src="imageUrl" alt="Card image" />
     <div class="card-body">
       <h3 class="card-title">{{ title }}</h3>
       <p class="card-text">

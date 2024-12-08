@@ -30,7 +30,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const clientIsMobile = window.matchMedia('(max-width: 480px)').matches;
+    const clientIsMobile = window.matchMedia('(max-width: 700px)').matches;
     const flexDirection = computed(() => (props.reverse ? 'row-reverse' : 'row'));
     const textAlignRight = computed(() => (props.reverse ? 'left' : 'right'));
     return { flexDirection, textAlignRight, clientIsMobile };
@@ -68,9 +68,6 @@ export default defineComponent({
   margin: 4rem 0;
 }
 
-.project-head {
-  padding: 0 1rem;
-}
 
 .project-body {
   background-color: rgba(19, 19, 19, 0.7);
@@ -115,7 +112,7 @@ export default defineComponent({
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .project {
     flex-direction: column;
     gap: 0.5rem;
