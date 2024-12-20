@@ -8,9 +8,9 @@ import Project from "@/components/project.vue";
       <h1 class="name">Lyne Q.</h1>
       <nav>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -49,11 +49,13 @@ import Project from "@/components/project.vue";
         image="/becode.png"
         title="Junior Web Developer"
         text="learned web development at BeCode, a 7-month intensive training program."
+        promote-url="https://becode.org/"
     />
     <Card
         image="/scitoyen.png"
         title="Service Citoyen"
         text="Volunteered for a 2 month in a retirement home, helping the elderly in my community."
+        promote-url="https://www.service-citoyen.be/"
     />
   </section>
   <section id="projects">

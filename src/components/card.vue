@@ -15,19 +15,32 @@ export default defineComponent({
     text: {
       type: String,
       default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita impedit in iure molestias praesentium repellat!"
+    },
+    promoteUrl: {
+      type: String,
+      default: "/"
     }
   },
   data() {
     return {
       imageUrl: new URL(this.image, import.meta.url).href
     }
+  },
+  methods: {
+    redirectTo(URL: string): void {
+      if (confirm(`Are you sure you want to go to ${URL}`)) {
+        window.location.href = URL;
+      } else {
+        console.log("User canceled redirection to ", URL.toString());
+      }
+    },
   }
 })
 </script>
 
 <template>
   <div class="card">
-    <img class="card-img" :src="imageUrl" alt="Card image" />
+    <img class="card-img" :src="imageUrl" alt="Card image" @click="redirectTo(promoteUrl)"/>
     <div class="card-body">
       <h3 class="card-title">{{ title }}</h3>
       <p class="card-text">
@@ -57,6 +70,13 @@ export default defineComponent({
 
   max-width: 25vw;
   max-height: 25vw;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
 }
 
 .card-body {
@@ -76,15 +96,14 @@ export default defineComponent({
   text-align: left;
 }
 
-
-@media (max-width: 1100px), (max-width: 480px){
+@media (max-width: 1100px), (max-width: 480px) {
 
   .card {
     flex-direction: column;
   }
 
   .card-img {
-    max-width:  25vw;
+    max-width: 25vw;
     max-height: 25vw;
   }
 
@@ -97,5 +116,4 @@ export default defineComponent({
   }
 
 }
-
 </style>
