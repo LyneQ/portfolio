@@ -9,6 +9,7 @@ const handleBurgerClick = () => {
 };
 
 import { onMounted, onUnmounted } from "vue";
+import {SlotFlags} from "@vue/shared";
 
 const updateWidth = () => {
   isDesktop.value = window.innerWidth > 510;
@@ -40,7 +41,7 @@ onUnmounted(() => {
         <img class="burgerButton" src="/burger.svg" alt="Menu" draggable="false" v-bind:onclick="handleBurgerClick"/>
       </div>
     </header>
-    {{ $slots }}
+    <slot/>
   </section>
 
 </template>

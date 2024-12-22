@@ -2,14 +2,12 @@
 import Card from "@/components/card.vue";
 import Project from "@/components/project.vue";
 import Navigation from "@/components/Navigation.vue";
-// import burgerIcon from "@/assets/burger.svg";
 
 
 </script>
 <template>
 
 <Navigation>
-</Navigation>
   <main id="about">
     <div class="container">
       <img class="avatar" src="/lyneq2.png" alt="Illustration of me"/>
@@ -78,6 +76,8 @@ import Navigation from "@/components/Navigation.vue";
       Feel free to contact me at the following email address:</p>
     <a href="mailto:lyne.quequin@gmail.com">lyne.quequin@gmail.com</a>
   </section>
+</Navigation>
+
 </template>
 
 <style scoped>
