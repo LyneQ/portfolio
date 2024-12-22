@@ -2,81 +2,84 @@
 import Card from "@/components/card.vue";
 import Project from "@/components/project.vue";
 import Navigation from "@/components/Navigation.vue";
-
+import Background from "@/components/Background.vue";
 
 </script>
 <template>
 
-<Navigation>
-  <main id="about">
-    <div class="container">
-      <img class="avatar" src="/lyneq2.png" alt="Illustration of me"/>
-      <div class="text">
-        <h1>
-          Hi, I'm<span class="stack" style="--stacks: 3;">
+  <Background>
+    <Navigation>
+      <main id="about">
+        <div class="container">
+          <img class="avatar" src="/lyneq2.png" alt="Illustration of me"/>
+          <div class="text">
+            <h1>
+              Hi, I'm<span class="stack" style="--stacks: 3;">
             <span style="--index: 0;">Lyne Quequin</span>
             <span style="--index: 1;">Lyne Quequin</span>
             <span style="--index: 2;">Lyne Quequin</span>
           </span>
-        </h1>
-        <p class="quote">
-          The only limit to what you can do, <br/>
-          is what you're willing to become.
-        </p>
-      </div>
-    </div>
+            </h1>
+            <p class="quote">
+              The only limit to what you can do, <br/>
+              is what you're willing to become.
+            </p>
+          </div>
+        </div>
 
-    <div class="intro">
-      <h1> I believe to be full-stack developer</h1>
-      <h5> currently learning web development at <a href="https:/becode.org/">@BeCode.org</a>, </h5>
-      <p>
-        I love to create web applications and websites that are both beautiful and functional.<br/>
-        I'm currently looking for new opportunities, so feel free to contact me if you think I could be a good fit for
-        your team!
-      </p>
-    </div>
-  </main>
-  <section id="experience">
-    <Card
-        image="/becode.png"
-        title="Junior Web Developer"
-        text="learned web development at BeCode, a 7-month intensive training program."
-        promote-url="https://becode.org/"
-    />
-    <Card
-        image="/scitoyen.png"
-        title="Service Citoyen"
-        text="Volunteered for a 2 month in a retirement home, helping the elderly in my community."
-        promote-url="https://www.service-citoyen.be/"
-    />
-  </section>
-  <section id="projects">
+        <div class="intro">
+          <h1> I believe to be full-stack developer</h1>
+          <h5> currently learning web development at <a href="https:/becode.org/">@BeCode.org</a>, </h5>
+          <p>
+            I love to create web applications and websites that are both beautiful and functional.<br/>
+            I'm currently looking for new opportunities, so feel free to contact me if you think I could be a good fit for
+            your team!
+          </p>
+        </div>
+      </main>
+      <section id="experience">
+        <Card
+            image="/becode.png"
+            title="Junior Web Developer"
+            text="learned web development at BeCode, a 7-month intensive training program."
+            promote-url="https://becode.org/"
+        />
+        <Card
+            image="/scitoyen.png"
+            title="Service Citoyen"
+            text="Volunteered for a 2 month in a retirement home, helping the elderly in my community."
+            promote-url="https://www.service-citoyen.be/"
+        />
+      </section>
+      <section id="projects">
 
-    <h2 class="subTitle">Projects</h2>
+        <h2 class="subTitle">Projects</h2>
 
-    <Project
-        :reverse="false"
-        status="completed"
-        image="/genialo.png"
-        title="Génial-O"
-        text="A discord bot / website that I developed when i started learning Node.js. It's a fun project that train me with vueJS, MongoDB and Debian server."
-        link="https://github.com/Genial-Team/Genial-O-14"
-    />
-    <Project
-        :reverse="true"
-        status="in progress"
-        title="Lokkeroom"
-        text="Developed a secure, RESTful platform that enables sports clubs to create private communication channels for teams, allowing coaches and players to exchange messages within a dedicated lobby. Each team has an exclusive lobby created by a coach (admin) who manages team membership and access. This platform was designed for simplicity and scalability, providing a direct, team-only communication experience."
-        link="https://github.com/LyneQ/Lokkeroom"
-    />
-  </section>
-  <section id="contact">
-    <h1 class="subTitle">Contact</h1>
-    <p>Interested in working together? <br/>
-      Feel free to contact me at the following email address:</p>
-    <a href="mailto:lyne.quequin@gmail.com">lyne.quequin@gmail.com</a>
-  </section>
-</Navigation>
+        <Project
+            :reverse="false"
+            status="completed"
+            image="/genialo.png"
+            title="Génial-O"
+            text="A discord bot / website that I developed when i started learning Node.js. It's a fun project that train me with vueJS, MongoDB and Debian server."
+            link="https://github.com/Genial-Team/Genial-O-14"
+        />
+        <Project
+            :reverse="true"
+            status="in progress"
+            title="Lokkeroom"
+            text="Developed a secure, RESTful platform that enables sports clubs to create private communication channels for teams, allowing coaches and players to exchange messages within a dedicated lobby. Each team has an exclusive lobby created by a coach (admin) who manages team membership and access. This platform was designed for simplicity and scalability, providing a direct, team-only communication experience."
+            link="https://github.com/LyneQ/Lokkeroom"
+        />
+      </section>
+      <section id="contact">
+        <h1 class="subTitle">Contact</h1>
+        <p>Interested in working together? <br/>
+          Feel free to contact me at the following email address:</p>
+        <a href="mailto:lyne.quequin@gmail.com">lyne.quequin@gmail.com</a>
+      </section>
+    </Navigation>
+  </Background>
+
 
 </template>
 

@@ -9,7 +9,6 @@ const handleBurgerClick = () => {
 };
 
 import { onMounted, onUnmounted } from "vue";
-import {SlotFlags} from "@vue/shared";
 
 const updateWidth = () => {
   isDesktop.value = window.innerWidth > 510;
