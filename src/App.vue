@@ -66,9 +66,9 @@ import Background from "@/components/Background.vue";
         <Project
             :reverse="true"
             status="in progress"
-            title="Lokkeroom"
-            text="Developed a secure, RESTful platform that enables sports clubs to create private communication channels for teams, allowing coaches and players to exchange messages within a dedicated lobby. Each team has an exclusive lobby created by a coach (admin) who manages team membership and access. This platform was designed for simplicity and scalability, providing a direct, team-only communication experience."
-            link="https://github.com/LyneQ/Lokkeroom"
+            title="Shopypal"
+            text="ShopyPal is an e-commerce platform built with Next.js, TypeScript and MySQL. It's a project that I'm currently working on on my free time. with the goal of learning more about Next.js and making a complete e-commerce platform."
+            link="https://github.com/LyneQ/shopypal"
         />
       </section>
       <section id="contact">
