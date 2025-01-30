@@ -1,64 +1,83 @@
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import {defineComponent, computed, onMounted, ref, onUnmounted} from 'vue';
 
 export default defineComponent({
   name: "project",
   props: {
     reverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     image: {
       type: String,
-      default: "https://placehold.co/900x700"
+      default: "https://placehold.co/900x700",
     },
     status: {
       type: String,
-      default: "in progress"
+      default: "in progress",
     },
     title: {
       type: String,
-      default: "Project title"
+      default: "Project title",
     },
     text: {
       type: String,
-      default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita impedit in iure molestias praesentium repellat!"
+      default:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita impedit in iure molestias praesentium repellat!",
     },
     link: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   setup(props) {
-    const clientIsMobile = window.matchMedia('(max-width: 700px)').matches;
-    const flexDirection = computed(() => (props.reverse ? 'row-reverse' : 'row'));
-    const textAlignRight = computed(() => (props.reverse ? 'left' : 'right'));
-    return { flexDirection, textAlignRight, clientIsMobile };
-  }
+    const clientIsMobile = ref(false);
+
+    const updateClientIsMobile = () => {
+      clientIsMobile.value = window.innerWidth <= 700;
+    };
+
+    onMounted(() => {
+      window.addEventListener("resize", updateClientIsMobile);
+      updateClientIsMobile();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("resize", updateClientIsMobile);
+    });
+
+    const flexDirectionType = computed(() =>
+        props.reverse ? "row-reverse" : "row"
+    );
+    const textAlignRight = computed(() =>
+        props.reverse ? "left" : "right"
+    );
+
+    return {flexDirectionType, textAlignRight, clientIsMobile};
+  },
 });
 </script>
 
 <template>
-  <div class="project" :style="{ flexDirection: flexDirection }">
-    <img v-show="!clientIsMobile" class="project-img" :src="image" alt="Project image" />
+  <div class="project" :class="reverse ? 'reverse' : ''">
+    <div class="project-head"></div>
+    <img v-show="!clientIsMobile" class="project-img" :src="image" alt="Project image"/>
     <div>
-      <div class="project-head" :style="!clientIsMobile ? { textAlign: textAlignRight } : {}">
-        <h5>{{ status }}</h5>
-        <h3 class="project-title">{{ title }}</h3>
-        <img v-show="clientIsMobile" class="project-img" :src="image" alt="Project image" />
-      </div>
-
+      <h5>{{ status }}</h5>
+      <h3 class="project-title">{{ title }}</h3>
+      <img v-show="clientIsMobile" class="project-img" :src="image" alt="Project image"/>
       <div class="project-body">
         <p class="project-text">
           {{ text }}
         </p>
-        <button class="card-btn"><a :href="link"> Read more</a> </button>
+        <a class="card-btn" :href="link">Read more</a>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 .project {
   display: flex;
   flex-direction: row;
@@ -68,6 +87,10 @@ export default defineComponent({
   margin: 4rem 0;
 }
 
+
+.project.reverse {
+  flex-direction: row-reverse;
+}
 
 .project-body {
   background-color: rgba(19, 19, 19, 0.7);
@@ -111,28 +134,28 @@ export default defineComponent({
   animation: space-glow-hover 2s infinite;
 }
 
-
 @media (max-width: 700px) {
   .project {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 0.5rem;
     align-items: center;
-    margin: 3rem 0;
-}
+    margin: 1rem 0;
+  }
 
- .project-img {
-  width: 100%;
-  height: auto;
-   margin-bottom: 1rem;
-  align-self: flex-end;
-}
+  .project-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    align-self: flex-end;
+  }
 
   .project-body {
     width: 100%;
   }
 
   .card-btn {
-    width: 100%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
 </style>

@@ -66,6 +66,7 @@ import Background from "@/components/Background.vue";
         <Project
             :reverse="true"
             status="in progress"
+            image="/shopypal.png"
             title="Shopypal"
             text="ShopyPal is an e-commerce platform built with Next.js, TypeScript and MySQL. It's a project that I'm currently working on on my free time. with the goal of learning more about Next.js and making a complete e-commerce platform."
             link="https://github.com/LyneQ/shopypal"
@@ -124,19 +125,17 @@ main {
     .text {
       text-align: left;
 
+      @media (max-width: 400px) {
+        max-width: 50vw;
+      }
+
       @media (max-width: 480px) {
         h1 {
-          font-size: 1.5rem;
           width: fit-content;
-          margin: 0 auto;
         }
 
         span {
           width: fit-content;
-        }
-
-        .quote {
-          font-size: 1rem;
         }
       }
     }
@@ -159,7 +158,6 @@ main {
 }
 
 #projects {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,6 +171,10 @@ main {
   align-content: center;
   gap: 1rem;
   margin: 0 10vw;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 
   & > * {
     width: fit-content !important;
