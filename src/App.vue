@@ -76,7 +76,7 @@ import Background from "@/components/Background.vue";
         <h1 class="subTitle">Contact</h1>
         <p>Interested in working together? <br/>
           Feel free to contact me at the following email address:</p>
-        <a href="mailto:lyne.quequin@gmail.com">lyne.quequin@gmail.com</a>
+        <a href="mailto:hey@lyneq.tech">hey@lyneq.tech</a>
       </section>
     </Navigation>
   </Background>
