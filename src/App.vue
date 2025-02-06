@@ -28,7 +28,7 @@ import Background from "@/components/Background.vue";
         </div>
 
         <div class="intro">
-          <h1> I believe to be full-stack developer</h1>
+          <h1>i aspire to become a full-stack developer,<br/> I'm also interested in DevOps</h1>
           <h5> currently learning web development at <a href="https:/becode.org/">@BeCode.org</a>, </h5>
           <p>
             I love to create web applications and websites that are both beautiful and functional.<br/>
