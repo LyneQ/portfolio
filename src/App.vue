@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Card from "@/components/card.vue";
-import Project from "@/components/project.vue";
+import Project from "@/components/Project.vue";
 import Navigation from "@/components/Navigation.vue";
 import Background from "@/components/Background.vue";
 
@@ -65,11 +65,11 @@ import Background from "@/components/Background.vue";
         />
         <Project
             :reverse="true"
-            status="in progress"
-            image="/shopypal.png"
-            title="Shopypal"
-            text="ShopyPal is an e-commerce platform built with Next.js, TypeScript and MySQL. It's a project that I'm currently working on on my free time. with the goal of learning more about Next.js and making a complete e-commerce platform."
-            link="https://github.com/LyneQ/shopypal"
+            status="completed"
+            image="https://placeholder.lyneq.tech/256x128?label=Placeholder%20!&font_size=32&font_color=e0e0e0&font_style=Inter&background_color=131313FF"
+            title="Placeholder-api"
+            text="A small API made with Go that returns a placeholder image with a lot of customization options for fonts an colors and backgrounds, making first for a personal use and because I wanted to strengthen my Go skills."
+            link="https://github.com/LyneQ/Placeholder-API"
         />
       </section>
       <section id="contact">

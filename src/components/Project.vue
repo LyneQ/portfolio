@@ -70,7 +70,7 @@ export default defineComponent({
         <p class="project-text">
           {{ text }}
         </p>
-        <a class="card-btn" :href="link">Read more</a>
+        <a class="card-btn" :href="link" target="_blank">Read more</a>
       </div>
     </div>
   </div>
